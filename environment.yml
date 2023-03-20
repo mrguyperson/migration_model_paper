@@ -13,3 +13,4 @@ dependencies:
   - r-microbenchmark=1.4.9
   - r-tinytex=0.44
   - r-bookdown=0.33
+  - wget=1.21.3
