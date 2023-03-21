@@ -1,6 +1,7 @@
 name: migration_model
 channels:
   - conda-forge
+  - bioconda
   - base
   - R
 dependencies:
@@ -15,3 +16,4 @@ dependencies:
   - r-bookdown=0.33
   - wget=1.20.3
   - unzip=6.0
+  - snakemake=7.24.2
