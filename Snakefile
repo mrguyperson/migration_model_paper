@@ -2,7 +2,10 @@ rule targets:
     input:
         "data/ds2890.zip",
         "data/ds2890.gdb",
-        "data/cover.shp"
+        "data/cover.shp",
+        "data/cover.prj",
+        "data/cover.shx",
+        "data/cover.dbf"
         
 rule download_archive:
     input:
@@ -27,7 +30,10 @@ rule convert_to_shapefile:
     input:
         script = "simplify_shape_file.R"
     output:
-        "data/cover.shp"
+        "data/cover.shp",
+        "data/cover.prj",
+        "data/cover.shx",
+        "data/cover.dbf"
     shell:
         """
         {input.script}
