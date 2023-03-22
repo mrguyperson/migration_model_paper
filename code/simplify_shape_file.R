@@ -1,13 +1,14 @@
 #!/usr/bin/env Rscript
+env_path <- dirname(dirname(dirname(.libPaths())))
+print(file.path(env_path, "lib"))
+Sys.setenv("LD_LIBRARY_PATH" = file.path(env_path, "lib"))
 
-library(tidyverse)
-library(here)
-library(sf)
+library(magrittr)
 
 # 1. read in data ----------------------------------------------------------
 
-data <- read_sf(here("data/ds2890.gdb")) %>% 
-    rename(geometry = Shape)
+data <- sf::read_sf(here::here("data/ds2890.gdb")) %>% 
+    dplyr::rename(geometry = Shape)
 
 # 2. functions ------------------------------------------------------------
 

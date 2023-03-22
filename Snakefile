@@ -19,7 +19,7 @@ rule download_archive:
 
 rule unzip_archive:
     input:
-        script = "unzip_shape_files.bash"
+        script = "code/unzip_shape_files.bash"
     output:
         "data/ds2890.gdb"
     shell:
@@ -28,7 +28,7 @@ rule unzip_archive:
         """
 rule convert_to_shapefile:
     input:
-        script = "simplify_shape_file.R"
+        script = "code/simplify_shape_file.R"
     output:
         "data/cover.shp",
         "data/cover.prj",
