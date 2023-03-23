@@ -1,11 +1,5 @@
 #!/usr/bin/env Rscript
 
-env_path <- dirname(dirname(dirname(.libPaths())))
-install.packages(
-  "https://cran.r-project.org/src/contrib/Archive/sf/sf_1.0-11.tar.gz",
-  repos=NULL
-)
-
 library(magrittr)
 
 # 1. read in data ----------------------------------------------------------

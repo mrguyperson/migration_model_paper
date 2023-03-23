@@ -19,9 +19,10 @@ rule download_archive:
 
 rule unzip_archive:
     input:
-        script = "code/unzip_shape_files.bash"
+        script = "code/unzip_shape_files.bash",
+        archive = "data/ds2890.zip"
     output:
-        "data/ds2890.gdb"
+        directory("data/ds2890.gdb")
     shell:
         """
         {input.script}
