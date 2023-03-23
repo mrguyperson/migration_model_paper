@@ -1,7 +1,10 @@
 #!/usr/bin/env Rscript
+
 env_path <- dirname(dirname(dirname(.libPaths())))
-print(file.path(env_path, "lib"))
-Sys.setenv("LD_LIBRARY_PATH" = file.path(env_path, "lib"))
+install.packages(
+  "https://cran.r-project.org/src/contrib/Archive/sf/sf_1.0-11.tar.gz",
+  repos=NULL
+)
 
 library(magrittr)
 
