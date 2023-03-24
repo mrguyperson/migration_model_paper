@@ -1,0 +1,5 @@
+name: unzip
+channels:
+  - conda-forge
+dependencies:
+  - unzip=6.0

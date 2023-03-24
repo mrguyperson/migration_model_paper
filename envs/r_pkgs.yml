@@ -1,0 +1,14 @@
+  
+name: r_pkgs
+channels:
+  - R
+dependencies:
+  - r-base=4.2.3
+  - r-tidyverse=1.3.2
+  - r-data.table=1.14.8
+  - r-here=1.0.1
+  - r-igraph=1.4.1
+  - r-microbenchmark=1.4.9
+  - r-tinytex=0.44
+  - r-bookdown=0.33
+  - r-sf=1.0_7
