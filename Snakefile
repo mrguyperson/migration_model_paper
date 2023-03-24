@@ -35,6 +35,7 @@ rule unzip_archive:
         """
         {input.script}
         """
+        
 rule convert_to_shapefile:
     input:
         script = "code/simplify_shape_file.R"
