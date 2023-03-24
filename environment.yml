@@ -17,3 +17,4 @@ dependencies:
   - wget=1.20.3
   - unzip=6.0
   - snakemake=7.24.2
+  - singularity

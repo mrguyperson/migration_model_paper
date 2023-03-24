@@ -35,6 +35,8 @@ rule convert_to_shapefile:
         "data/cover.prj",
         "data/cover.shx",
         "data/cover.dbf"
+    container: 
+        "docker://mrguyperson/fedora36r"
     shell:
         """
         {input.script}
