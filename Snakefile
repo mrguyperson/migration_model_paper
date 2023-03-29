@@ -14,8 +14,6 @@ rule download_archive:
         "data/ds2890.zip"
     conda:
         "envs/wget.yml"
-    container:
-        None
     shell:
         """
         {input.script}
@@ -29,8 +27,6 @@ rule unzip_archive:
         directory("data/ds2890.gdb")
     conda:
         "envs/unzip.yml"
-    container:
-        None
     shell:
         """
         {input.script}
@@ -38,14 +34,15 @@ rule unzip_archive:
         
 rule convert_to_shapefile:
     input:
-        script = "code/simplify_shape_file.R"
+        script = "code/simplify_shape_file.R",
+        gdb_file = "data/ds2890.gdb"
     output:
         "data/cover.shp",
         "data/cover.prj",
         "data/cover.shx",
         "data/cover.dbf"
-    container: 
-        "docker://mrguyperson/fedora36r"
+    conda: 
+        "envs/r_pkgs.yml"
     shell:
         """
         {input.script}

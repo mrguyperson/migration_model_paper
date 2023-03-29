@@ -1,6 +1,7 @@
   
 name: r_pkgs
 channels:
+  - conda-forge
   - R
 dependencies:
   - r-base=4.2.3
