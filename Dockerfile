@@ -1,11 +1,12 @@
 FROM fedora:36
 
-WORKDIR /usr/project
-
+# WORKDIR /usr/project
+# SHELL ["/bin/bash", "-c"]
 # COPY code/ /usr/project/code
 # COPY envs/ /usr/project/envs
 # COPY Snakefile /usr/project/.
-COPY environment.yml /usr/project/.
+
+
 # RUN mkdir /usr/project/data
 
 # update and install dependencies
@@ -17,9 +18,13 @@ RUN wget https://github.com/conda-forge/miniforge/releases/latest/download/Mamba
     bash ./Mambaforge-Linux-x86_64.sh -bf -p /usr/mambaforge/ && \
     rm ./Mambaforge-Linux-x86_64.sh
 ENV PATH /usr/mambaforge/bin:$PATH
+# RUN mamba env create -f environment.yml
+WORKDIR /usr/project
+COPY environment.yml .
 RUN mamba env create -f environment.yml
 
 RUN echo "source activate analysis" > ~/.bashrc
+
 
 
 # RUN mamba create -c conda-forge -c bioconda -n snakemake snakemake

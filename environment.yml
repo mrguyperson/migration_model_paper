@@ -1,9 +1,7 @@
 name: analysis
 channels:
-  - base
   - bioconda
   - conda-forge
-  - bioconda
 dependencies:
   - snakemake=7.24.2
   - r-base=4.2.3
