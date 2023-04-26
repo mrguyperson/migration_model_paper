@@ -1,4 +1,3 @@
-name: analysis
 channels:
   - bioconda
   - conda-forge

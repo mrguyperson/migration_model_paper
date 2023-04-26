@@ -44,3 +44,7 @@ vignettes/*.pdf
 
 # snakemake
 .snakemake
+
+# bash
+.bashrc
+.bash_history

@@ -12,8 +12,6 @@ rule download_archive:
         script = "code/get_shape_files.bash"
     output:
         "data/ds2890.zip"
-    conda:
-        "envs/wget.yml"
     shell:
         """
         {input.script}
@@ -25,8 +23,6 @@ rule unzip_archive:
         archive = "data/ds2890.zip"
     output:
         directory("data/ds2890.gdb")
-    conda:
-        "envs/unzip.yml"
     shell:
         """
         {input.script}
@@ -41,8 +37,6 @@ rule convert_to_shapefile:
         "data/cover.prj",
         "data/cover.shx",
         "data/cover.dbf"
-    conda: 
-        "envs/r_pkgs.yml"
     shell:
         """
         {input.script}
